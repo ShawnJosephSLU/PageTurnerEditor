@@ -681,9 +681,7 @@ Rectangle {
 
     }
 //---------------------------------------------------------------  Colour
-    RightSeperator{
-        strokeColor: "#A0A0A0"
-    }
+    RightSeperator{ strokeColor: "#A0A0A0"}
 
     function leftToolbarColor () {
         return "white"

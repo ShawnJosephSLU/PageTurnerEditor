@@ -15,9 +15,7 @@ qt_add_executable(appPageTurnerEditor
 qt_add_qml_module(appPageTurnerEditor
     URI PageTurnerEditor
     VERSION 1.0
-    QML_FILES Main.qml
-    QML_FILES LeftToolbar.qml
-    QML_FILES RightSeperator.qml
+
     RESOURCES
     Assets/LeftToolbar/icons/selectBtnIcon.png
     Assets/LeftToolbar/icons/boxSelectBtnIcon.png
@@ -35,7 +33,12 @@ qt_add_qml_module(appPageTurnerEditor
     Assets/LeftToolbar/icons/showRulerBtnIcon.png
     Assets/LeftToolbar/icons/previewBtnIcon.png
 
+    QML_FILES Main.qml
+    QML_FILES LeftToolbar.qml
+    QML_FILES RightSeperator.qml
     QML_FILES ToolbarBtn.qml
+    QML_FILES Statusbar.qml
+    QML_FILES TopSeperator.qml
 
 
 )

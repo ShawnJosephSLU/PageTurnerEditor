@@ -3,6 +3,7 @@ import QtQuick.Controls
 
 
 Window {
+    id: root
     property string projectName: "Untitled Project"
     readonly property string windowTitleText : "Page Turner Editor"
 
@@ -25,6 +26,11 @@ Window {
     readonly property bool isPreviewingProject: leftToolbar.previewBtnClicked
 
 
+    property int currentPage : 220
+    property int numberOfPages : 1000
+    property real zoomLevel : 100.0
+    property string language : "EN"
+
 
     // ---------------------------------------------------------------------------------------
     width: 1366
@@ -36,17 +42,26 @@ Window {
         id:leftToolbar
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.bottom: parent.bottom
+        anchors.bottom: statusbar.top
         width: 40
 
     }
 
-    Rectangle {
-        width: 100
-        height: 100
-        anchors.centerIn: parent
-        color: isShowingGrid ? "red": isShowingRuler ? "green" : isPreviewingProject ? "blue" : "black"
+    Statusbar {
+        id:statusbar
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        height: 40
+        currentPageNumber: root.currentPage
+        numberOfPages: root.numberOfPages
+        zoomLevel: root.zoomLevel
+        language: root.language
+
+
     }
+
+   
 
 }
 
