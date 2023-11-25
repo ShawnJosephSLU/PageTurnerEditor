@@ -45,6 +45,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES LayersPanel.qml
     QML_FILES PropertiesPanel.qml
     QML_FILES LeftSeperator.qml
+    QML_FILES ProjectPage.qml
 
 
 )

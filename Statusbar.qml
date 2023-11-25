@@ -44,9 +44,9 @@ Rectangle {
         Label {
             anchors.fill: parent
             verticalAlignment: Qt.AlignVCenter
-            horizontalAlignment: Qt.AlignRight
+            horizontalAlignment: Qt.AlignLeft
             padding: 10
-            text: "Zoom : " + zoomLevel + "%"
+            text: "Zoom : " + zoomLevel + " %"
             color: "black"
             font.pixelSize: 12
         }
@@ -117,9 +117,5 @@ Rectangle {
             color: "black"
             font.pixelSize: 12
         }
-
-
     }
-
-
 }

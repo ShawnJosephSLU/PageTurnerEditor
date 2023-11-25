@@ -33,7 +33,7 @@ Window {
 
     property int currentPage : 220
     property int numberOfPages : 1000
-    property real zoomLevel : 100.0
+    property int zoomLevel : pageView.scaleFactor * 100
     property string language : "EN"
 
     readonly property int pageWidth: 1275
@@ -72,6 +72,7 @@ Window {
     }
 
     PageView {
+        id:pageView
         anchors.left: layersPanel.right
         anchors.top: parent.top
         anchors.bottom: statusbar.top
