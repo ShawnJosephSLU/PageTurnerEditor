@@ -26,6 +26,9 @@ Window {
     readonly property bool isPreviewingProject: leftToolbar.previewBtnClicked
 
 
+   readonly property bool isLayersPanelOpened: leftToolbar.showLayersBtnClicked
+
+
     property int currentPage : 220
     property int numberOfPages : 1000
     property real zoomLevel : 100.0
@@ -67,13 +70,24 @@ Window {
     }
 
     PageView {
-        anchors.left: leftToolbar.right
+        anchors.left: layersPanel.right
         anchors.top: parent.top
         anchors.bottom: statusbar.top
         anchors.right: parent.right
 
         pageWidth: root.pageWidth
         pageHeight: root.pageHeight
+
+    }
+
+    LayersPanel {
+        id:layersPanel
+        anchors.left: leftToolbar.right
+        anchors.top: parent.top
+        anchors.bottom: statusbar.top
+
+        isOpened: isLayersPanelOpened
+
 
     }
 

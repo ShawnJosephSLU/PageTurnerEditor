@@ -33,6 +33,8 @@ Rectangle {
     readonly property bool previewBtnClicked: previewProjectBtn.btnActive
     readonly property bool showRulerBtnClicked: showRulerBtn.btnActive
     readonly property bool showGridBtnClicked: showGridBtn.btnActive
+    readonly property bool showLayersBtnClicked: showLayersBtn.btnActive
+
 
 
 
@@ -505,7 +507,7 @@ Rectangle {
 //-------------------------------------------------------------- canvas buttons
     ToolbarBtn {
         id: showGridBtn
-        btnImage: "Assets/LeftToolbar/icons/showRulerBtnIcon.png"
+        btnImage: "Assets/LeftToolbar/icons/showGridBtnIcon.png"
         btnActive: true
         anchors.left: parent.left
         anchors.right: parent.right
@@ -549,7 +551,7 @@ Rectangle {
 
     ToolbarBtn {
         id: showRulerBtn
-        btnImage: "Assets/LeftToolbar/icons/showGridBtnIcon.png"
+        btnImage: "Assets/LeftToolbar/icons/showRulerBtnIcon.png"
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: showGridBtn.top
@@ -639,6 +641,54 @@ Rectangle {
     }
 
 
+
+    ToolbarBtn {
+        id: showLayersBtn
+        btnImage: "Assets/LeftToolbar/icons/showLayersBtnIcon.png"
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: showRulerBtn.top
+        btnActive: true
+
+
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                cursorShape = Qt.PointingHandCursor
+                parent.color = "#EFEFFF"
+                //console.info(btnName +" entered")
+            }
+
+            onExited: {
+                cursorShape = Qt.ArrowCursor
+                parent.color = "transparent"
+                //console.info(btnName +" exited")
+
+            }
+
+            onClicked: {
+                if(!parent.btnActive){
+                    parent.btnActive = true
+                } else {
+                    parent.btnActive = false
+                }
+
+            }
+
+            onPressAndHold:  {
+                btnPressAndHold = true
+                if(btnPressAndHold) {
+                    console.info(parent.btnName +" pressed and hold")
+                }
+            }
+        }
+    }
+
+
+
 // ---------------------------------------------------------------- Initialization
     function toggleButton(clickedButton) {
        if (activeButton !== null && activeButton !== clickedButton) {
@@ -663,15 +713,17 @@ Rectangle {
         toolbarBtnList.push(addGifTool)
         toolbarBtnList.push(addQATool)
 
-
         toolbarBtnList.forEach(function(item, index) { // set the y position of the buttons
             item.y = (40 * index)
         })
 
 
+
+
         canvasBtnList.push(showGridBtn)
         canvasBtnList.push(showRulerBtn)
         canvasBtnList.push(previewProjectBtn)
+        canvasBtnList.push(showLayersBtn)
 
 
 

@@ -32,6 +32,7 @@ qt_add_qml_module(appPageTurnerEditor
     Assets/LeftToolbar/icons/showGridBtnIcon.png
     Assets/LeftToolbar/icons/showRulerBtnIcon.png
     Assets/LeftToolbar/icons/previewBtnIcon.png
+    Assets/LeftToolbar/icons/showLayersBtnIcon.png
 
     QML_FILES Main.qml
     QML_FILES LeftToolbar.qml
@@ -40,6 +41,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES Statusbar.qml
     QML_FILES TopSeperator.qml
     QML_FILES PageView.qml
+    QML_FILES LayersPanel.qml
 
 
 )
