@@ -39,6 +39,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES ToolbarBtn.qml
     QML_FILES Statusbar.qml
     QML_FILES TopSeperator.qml
+    QML_FILES PageView.qml
 
 
 )

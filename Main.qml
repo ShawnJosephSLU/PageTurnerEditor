@@ -31,8 +31,8 @@ Window {
     property real zoomLevel : 100.0
     property string language : "EN"
 
-    readonly property int pageWidth: 1080
-    readonly property int pageHeight: 1920
+    readonly property int pageWidth: 1275
+    readonly property int pageHeight: 1650
 
 
     // ---------------------------------------------------------------------------------------
@@ -63,6 +63,17 @@ Window {
         pageWidth: root.pageWidth
         pageHeight: root.pageHeight
 
+
+    }
+
+    PageView {
+        anchors.left: leftToolbar.right
+        anchors.top: parent.top
+        anchors.bottom: statusbar.top
+        anchors.right: parent.right
+
+        pageWidth: root.pageWidth
+        pageHeight: root.pageHeight
 
     }
 
