@@ -31,13 +31,18 @@ Window {
 
 
 
-    property int currentPage : 220
-    property int numberOfPages : 1000
+
     property int zoomLevel : pageView.scaleFactor * 100
     property string language : "EN"
 
     readonly property int pageWidth: 1275
     readonly property int pageHeight: 1650
+
+    property ProjectPage allPages: pageView.allPages
+    property int currentPageNumber : 1
+    property int numberOfPages : 1
+    property string currentPageId : "Front Cover"
+
 
 
     // ---------------------------------------------------------------------------------------
@@ -61,7 +66,7 @@ Window {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         height: 40
-        currentPageNumber: root.currentPage
+        currentPageNumber: root.currentPageNumber
         numberOfPages: root.numberOfPages
         zoomLevel: root.zoomLevel
         language: root.language
@@ -103,6 +108,10 @@ Window {
         isOpened: isPropertiesPanelOpened
     }
 
+
+    CurrentPageLabel {
+        currentPageId: root.currentPageId
+    }
    
 
 }

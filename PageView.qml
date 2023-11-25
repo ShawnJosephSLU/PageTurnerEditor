@@ -13,15 +13,8 @@ Rectangle {
     property real scaleFactor: 1.0
     property real initialScaleFactor: 1.0
 
-    Label {
-        text : "Page ID : "+ frontCoverPage.pageID
-        width: 300
-        height: 50
-        color: "black"
-        padding: 20
-        z: 2
 
-    }
+
 
     ProjectPage {
 
@@ -54,5 +47,10 @@ Rectangle {
             // Limit the scale factor to avoid too small or too large values
             scaleFactor = Math.max(0.1, Math.min(3.0, scaleFactor))
         }
+    }
+
+
+    Component.onCompleted:  {
+        allPages.push[frontCoverPage]
     }
 }

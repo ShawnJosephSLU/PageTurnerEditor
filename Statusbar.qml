@@ -113,7 +113,7 @@ Rectangle {
             verticalAlignment: Qt.AlignVCenter
             horizontalAlignment: Qt.AlignLeft
             padding: 10
-            text: "Dimension : " + pageWidth + " x " + pageHeight + " px"
+            text: "Dimensions : " + pageWidth + " x " + pageHeight + " px"
             color: "black"
             font.pixelSize: 12
         }
