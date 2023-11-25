@@ -1,8 +1,10 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Window 2.12
 
 
-Window {
+
+ApplicationWindow {
     id: root
     property string projectName: "Untitled Project"
     readonly property string windowTitleText : "Page Turner Editor"
@@ -50,6 +52,12 @@ Window {
     height: 857
     visible: true
     title: qsTr(windowTitleText + " : " + projectName)
+
+   MainMenubar {
+
+
+   }
+
 
     LeftToolbar {
         id:leftToolbar
