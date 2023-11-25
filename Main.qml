@@ -31,6 +31,9 @@ Window {
     property real zoomLevel : 100.0
     property string language : "EN"
 
+    readonly property int pageWidth: 1080
+    readonly property int pageHeight: 1920
+
 
     // ---------------------------------------------------------------------------------------
     width: 1366
@@ -57,6 +60,8 @@ Window {
         numberOfPages: root.numberOfPages
         zoomLevel: root.zoomLevel
         language: root.language
+        pageWidth: root.pageWidth
+        pageHeight: root.pageHeight
 
 
     }

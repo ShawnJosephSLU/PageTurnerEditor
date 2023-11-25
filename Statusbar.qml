@@ -9,6 +9,9 @@ Rectangle {
     property real zoomLevel;
     property string language;
 
+    property int pageWidth;
+    property int pageHeight;
+
     TopSeperator {strokeColor: "#A0A0A0"}
 
     Rectangle {
@@ -16,7 +19,7 @@ Rectangle {
         anchors.top : parent.top
         anchors.bottom: parent.bottom
         anchors.left:  parent.left
-        width: zoomLabel.width + languageLabel.width // makes both side of the statusbar even, so the info text is always centered
+        width: 130
         color: "transparent"
 
         Label {
@@ -35,7 +38,7 @@ Rectangle {
         anchors.top : parent.top
         anchors.bottom: parent.bottom
         anchors.right:  parent.right
-        width: 80
+        width: 100
         color: "transparent"
 
         Label {
@@ -54,14 +57,14 @@ Rectangle {
         anchors.top : parent.top
         anchors.bottom: parent.bottom
         anchors.right:  zoomLabel.left
-        width: 140
+        width: 100
         color: "transparent"
         clip: true
 
         Label {
             anchors.fill: parent
             verticalAlignment: Qt.AlignVCenter
-            horizontalAlignment: Qt.AlignLeft
+            horizontalAlignment: Qt.AlignRight
             padding: 10
             text: "Language : " + language
             color: "black"
@@ -74,7 +77,7 @@ Rectangle {
         id: infoLabel
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        anchors.left: currentPageLabel.right
+        anchors.left: pageDimensionLabel.right
         anchors.right : languageLabel.left
         color: "transparent"
         clip: true
@@ -93,6 +96,30 @@ Rectangle {
 
     }
 
+
+
+    Rectangle {
+        id: pageDimensionLabel
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.left : currentPageLabel.right
+        width: 180
+        color: "transparent"
+        clip: true
+
+
+        Label {
+            anchors.fill: parent
+            verticalAlignment: Qt.AlignVCenter
+            horizontalAlignment: Qt.AlignLeft
+            padding: 10
+            text: "Dimension : " + pageWidth + " x " + pageHeight + " px"
+            color: "black"
+            font.pixelSize: 12
+        }
+
+
+    }
 
 
 }
