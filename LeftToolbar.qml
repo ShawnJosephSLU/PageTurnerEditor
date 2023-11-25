@@ -34,6 +34,7 @@ Rectangle {
     readonly property bool showRulerBtnClicked: showRulerBtn.btnActive
     readonly property bool showGridBtnClicked: showGridBtn.btnActive
     readonly property bool showLayersBtnClicked: showLayersBtn.btnActive
+    readonly property bool showPropertiesBtnClicked :  showPropertiesBtn.btnActive
 
 
 
@@ -513,6 +514,8 @@ Rectangle {
         anchors.right: parent.right
         anchors.bottom: previewProjectBtn.top
 
+
+
         MouseArea {
             anchors.fill: parent
             hoverEnabled: true
@@ -652,6 +655,7 @@ Rectangle {
 
 
 
+
         MouseArea {
             anchors.fill: parent
             hoverEnabled: true
@@ -689,6 +693,54 @@ Rectangle {
 
 
 
+    ToolbarBtn {
+        id: showPropertiesBtn
+        btnImage: "Assets/LeftToolbar/icons/showPropertiesBtnIcon.png"
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: showLayersBtn.top
+        btnActive: true
+
+
+        TopSeperator{ strokeColor: "#A0A0A0"}
+
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                cursorShape = Qt.PointingHandCursor
+                parent.color = "#EFEFFF"
+                //console.info(btnName +" entered")
+            }
+
+            onExited: {
+                cursorShape = Qt.ArrowCursor
+                parent.color = "transparent"
+                //console.info(btnName +" exited")
+
+            }
+
+            onClicked: {
+                if(!parent.btnActive){
+                    parent.btnActive = true
+                } else {
+                    parent.btnActive = false
+                }
+
+            }
+
+            onPressAndHold:  {
+                btnPressAndHold = true
+                if(btnPressAndHold) {
+                    console.info(parent.btnName +" pressed and hold")
+                }
+            }
+        }
+    }
+
+
 // ---------------------------------------------------------------- Initialization
     function toggleButton(clickedButton) {
        if (activeButton !== null && activeButton !== clickedButton) {
@@ -724,6 +776,7 @@ Rectangle {
         canvasBtnList.push(showRulerBtn)
         canvasBtnList.push(previewProjectBtn)
         canvasBtnList.push(showLayersBtn)
+        canvasBtnList.push(showPropertiesBtn)
 
 
 

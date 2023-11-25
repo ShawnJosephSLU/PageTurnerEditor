@@ -27,6 +27,8 @@ Window {
 
 
    readonly property bool isLayersPanelOpened: leftToolbar.showLayersBtnClicked
+   readonly property bool isPropertiesPanelOpened: leftToolbar.showPropertiesBtnClicked
+
 
 
     property int currentPage : 220
@@ -73,7 +75,7 @@ Window {
         anchors.left: layersPanel.right
         anchors.top: parent.top
         anchors.bottom: statusbar.top
-        anchors.right: parent.right
+        anchors.right: propertiesPanel.left
 
         pageWidth: root.pageWidth
         pageHeight: root.pageHeight
@@ -89,6 +91,15 @@ Window {
         isOpened: isLayersPanelOpened
 
 
+    }
+
+    PropertiesPanel {
+        id: propertiesPanel
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: statusbar.top
+
+        isOpened: isPropertiesPanelOpened
     }
 
    
