@@ -31,6 +31,10 @@ ApplicationWindow {
    readonly property bool isLayersPanelOpened: leftToolbar.showLayersBtnClicked
    readonly property bool isPropertiesPanelOpened: leftToolbar.showPropertiesBtnClicked
 
+   readonly property bool isPageViewLeftClicked : pageView.leftClicked
+   readonly property bool isPageViewRightClicked: pageView.rightClicked
+
+
    // TODO: add fit to screen button that calls the pageView.fitToScreen
 
 

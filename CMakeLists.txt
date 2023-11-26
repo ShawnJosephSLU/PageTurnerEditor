@@ -50,6 +50,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES BottomSeperator.qml
     QML_FILES CurrentPageLabel.qml
     QML_FILES MainMenubar.qml
+    QML_FILES PageViewRightButtonMenu.qml
 
 
 )
