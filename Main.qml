@@ -31,6 +31,8 @@ ApplicationWindow {
    readonly property bool isLayersPanelOpened: leftToolbar.showLayersBtnClicked
    readonly property bool isPropertiesPanelOpened: leftToolbar.showPropertiesBtnClicked
 
+   // TODO: add fit to screen button that calls the pageView.fitToScreen
+
 
 
 
@@ -54,9 +56,10 @@ ApplicationWindow {
     title: qsTr(windowTitleText + " : " + projectName)
 
 
+
    MainMenubar {
 
-
+        id: mainMenubar
    }
 
 

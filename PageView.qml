@@ -52,5 +52,26 @@ Rectangle {
 
     Component.onCompleted:  {
         allPages.push[frontCoverPage]
+        fitToScreen()
+    }
+
+
+    function fitToScreen() {
+        // Calculate the available space in the viewport
+        const viewportWidth = pageView.width;
+        const viewportHeight = pageView.height;
+
+        const pageAspectRatio = pageWidth / pageHeight;
+
+        // Determine the new scale factor based on the available space and aspect ratio
+        let newScaleFactor = 1.0;
+        if (pageAspectRatio > viewportWidth / viewportHeight) {
+            newScaleFactor = viewportWidth / (pageWidth * pageAspectRatio) - 0.1;
+        } else {
+            newScaleFactor = (viewportHeight / pageHeight) - 0.1;
+        }
+
+        // Set the new scale factor
+        pageView.scaleFactor = newScaleFactor;
     }
 }
