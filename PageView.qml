@@ -61,6 +61,7 @@ Rectangle {
         const viewportWidth = pageView.width;
         const viewportHeight = pageView.height;
 
+        // Calculate the aspect ratio of the page
         const pageAspectRatio = pageWidth / pageHeight;
 
         // Determine the new scale factor based on the available space and aspect ratio
