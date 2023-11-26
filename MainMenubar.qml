@@ -6,33 +6,33 @@ MenuBar {
        Menu {
            title: "File"
            MenuItem {
-               text: "New Project"
+               text: "New Project " +  "\""+ projectName + "\""
                onTriggered: console.log("New Action")
                shortcut: StandardKey.New
            }
 
            MenuItem {
-               text: "Open Existing Project"
+               text: "Open Existing Project..."
                onTriggered: console.log("New Action")
                shortcut: StandardKey.Open
            }
 
 
            MenuItem {
-               text: "Recent Project"
+               text: "Recent Project..."
 
 
            }
             MenuSeparator{}
 
            MenuItem {
-               text: "Save"
+               text: "Save " +  "\""+ projectName + "\""
                onTriggered: console.log("New Action")
                shortcut: StandardKey.Save
            }
 
            MenuItem {
-               text: "Save As"
+               text: "Save " +  "\""+ projectName + "\"" + " As"
                onTriggered: console.log("New Action")
                shortcut: StandardKey.SaveAs
            }

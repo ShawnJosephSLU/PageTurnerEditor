@@ -53,6 +53,7 @@ ApplicationWindow {
     visible: true
     title: qsTr(windowTitleText + " : " + projectName)
 
+
    MainMenubar {
 
 
