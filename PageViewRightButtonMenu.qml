@@ -6,7 +6,7 @@ Rectangle{
     id: root
 
     width: 240
-    height: 175
+    height: 200
     radius: 5
     color: Qt.rgba(0,0,0,0)
     visible: false

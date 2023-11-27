@@ -452,11 +452,75 @@ ApplicationWindow {
             }
         }
 
+        //----------------------------------------------------------------------
+        PaddedRectangle {
+            id: fitToScreenOption
+            height: 25
+            anchors.top: zoomOutOption.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            padding: 1
+
+            color : "transparent"
+
+            Label {
+                id: fitToScreenBtnText
+                text: "Fit To Screen"
+                color: "#ebebeb"
+                x: 12
+                y: 6
+            }
+
+
+            Label {
+                id: fitToScreenShortcut
+                text: "⇧ 0"
+                color :"#7b7b7b"
+                y: 6
+                x: 210
+            }
+
+
+            Rectangle { // seperator
+                color: "#2a2a2a"
+                height: 1
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+
+            }
+
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: {
+                    parent.color = "#b5c5ff"
+                    fitToScreenBtnText.color = "black"
+                    fitToScreenShortcut.color = "black"
+
+                }
+                onExited: {
+                    parent.color = "transparent"
+                    fitToScreenBtnText.color = "#ebebeb"
+                    fitToScreenShortcut.color = "#7b7b7b"
+
+                }
+
+                onClicked: {
+                    pageView.fitToScreen()
+                    // make invisible
+                    rightClickMenu.visible = false
+                }
+            }
+        }
+
+
     //----------------------------------------------------------
         PaddedRectangle {
             id: pageSettingsOption
             height: 25
-            anchors.top: zoomOutOption.bottom
+            anchors.top: fitToScreenOption.bottom
             anchors.left: parent.left
             anchors.right: parent.right
             padding: 1
