@@ -35,6 +35,8 @@ qt_add_qml_module(appPageTurnerEditor
     Assets/LeftToolbar/icons/previewBtnIcon.png
     Assets/LeftToolbar/icons/showLayersBtnIcon.png
     Assets/LeftToolbar/icons/showPropertiesBtnIcon.png
+    Assets/PageView/cursorXTracker.png
+
 
     QML_FILES Main.qml
     QML_FILES LeftToolbar.qml
