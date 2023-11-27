@@ -599,7 +599,7 @@ ApplicationWindow {
     PageView {
         id:pageView
         anchors.left: layersPanel.right
-        anchors.top: parent.top
+        anchors.top: currentPageLabel.bottom
         anchors.bottom: statusbar.top
         anchors.right: propertiesPanel.left
 
@@ -630,6 +630,7 @@ ApplicationWindow {
 
 
     CurrentPageLabel {
+        id : currentPageLabel
         currentPageId: root.currentPageId
     }
    
