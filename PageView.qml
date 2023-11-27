@@ -22,14 +22,18 @@ Rectangle {
 
 
 
-    ProjectPage {
 
+    ProjectPage {
         id: frontCoverPage
         pageID: "Front Page"
         width: pageWidth * scaleFactor
         height: pageHeight * scaleFactor
         anchors.centerIn: parent
+
     }
+
+
+
 
 
 
