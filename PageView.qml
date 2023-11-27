@@ -30,10 +30,6 @@ Flickable {
     }
 
 
-    PageViewRuler {
-        visible: isRulerVisible
-    }
-
 
 
     ProjectPage {
@@ -42,6 +38,12 @@ Flickable {
         width: pageWidth * scaleFactor
         height: pageHeight * scaleFactor
         anchors.centerIn: parent
+    }
+
+
+
+    PageViewRuler {
+        visible: isRulerVisible
     }
 
 
