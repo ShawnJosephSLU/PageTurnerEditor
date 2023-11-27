@@ -510,7 +510,9 @@ ApplicationWindow {
                 onClicked: {
                     pageView.fitToScreen()
                     // make invisible
-                    rightClickMenu.visible = false
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
+
                 }
             }
         }
@@ -555,7 +557,8 @@ ApplicationWindow {
                 onClicked: {
                     // Handle Redo scene then ...
                     // make invisible
-                    rightClickMenu.visible = false
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
