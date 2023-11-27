@@ -81,11 +81,6 @@ Flickable {
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
 
-
-        onPositionChanged:  {
-           console.log("Hovering")
-        }
-
         onClicked: (mouse) => {
             if(mouse.button === Qt.RightButton){
                mousePOSX = mouse.x
