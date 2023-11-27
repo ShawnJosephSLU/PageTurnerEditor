@@ -606,6 +606,8 @@ ApplicationWindow {
         pageWidth: root.pageWidth
         pageHeight: root.pageHeight
 
+        isRulerVisible: root.isShowingRuler
+
     }
 
     LayersPanel {

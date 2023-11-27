@@ -36,6 +36,8 @@ qt_add_qml_module(appPageTurnerEditor
     Assets/LeftToolbar/icons/showLayersBtnIcon.png
     Assets/LeftToolbar/icons/showPropertiesBtnIcon.png
     Assets/PageView/cursorXTracker.png
+    Assets/PageView/cursorYTracker.png
+
 
 
     QML_FILES Main.qml
@@ -53,6 +55,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES CurrentPageLabel.qml
     QML_FILES MainMenubar.qml
     QML_FILES PageViewRightButtonMenu.qml
+    QML_FILES PageViewRuler.qml
 
 
 )

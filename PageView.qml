@@ -2,12 +2,15 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 
-Rectangle {
+Flickable {
     id: pageView
     property int pageWidth
     property int pageHeight
-    color: "lightgrey"
+   // color: "lightgrey"
     clip: true
+
+    contentWidth: pageView.width
+    contentHeight: pageView.height
 
     property var allPages: []
     property real scaleFactor: 1.0
@@ -18,8 +21,18 @@ Rectangle {
 
     property int mousePOSX ;
     property int mousePOSY;
+    property bool isRulerVisible : false
+
+    Rectangle {
+        id: background
+        color: "lightgrey"
+        anchors.fill: parent
+    }
 
 
+    PageViewRuler {
+        visible: isRulerVisible
+    }
 
 
 
@@ -29,43 +42,8 @@ Rectangle {
         width: pageWidth * scaleFactor
         height: pageHeight * scaleFactor
         anchors.centerIn: parent
-
     }
 
-
-
-
-
-
-
-    MouseArea {
-        anchors.fill: parent
-
-        acceptedButtons: Qt.LeftButton | Qt.RightButton
-
-
-        onClicked: (mouse) => {
-            if(mouse.button === Qt.RightButton){
-               mousePOSX = mouse.x
-
-
-               mousePOSY = mouse.y
-
-               rightClicked = true
-               leftClicked = false
-
-            }
-            else if(mouse.button === Qt.LeftButton) {
-                rightClicked = false
-                leftClicked = true
-
-                console.log("left-clicked")
-            }
-        }
-
-
-
-    }
 
     PinchArea {
         anchors.fill: parent
@@ -91,6 +69,40 @@ Rectangle {
         }
     }
 
+
+
+    MouseArea {
+        id: pageViewMouseArea
+        anchors.fill: parent
+        hoverEnabled: true
+
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+
+
+        onPositionChanged:  {
+           console.log("Hovering")
+        }
+
+        onClicked: (mouse) => {
+            if(mouse.button === Qt.RightButton){
+               mousePOSX = mouse.x
+
+
+               mousePOSY = mouse.y
+
+               rightClicked = true
+               leftClicked = false
+
+            }
+            else if(mouse.button === Qt.LeftButton) {
+                rightClicked = false
+                leftClicked = true
+
+                console.log("left-clicked")
+            }
+        }
+    }
 
     Component.onCompleted:  {
         allPages.push[frontCoverPage]
