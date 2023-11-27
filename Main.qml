@@ -35,7 +35,7 @@ ApplicationWindow {
    readonly property bool isPageViewRightClicked: pageView.rightClicked
 
     property int mousePOSX : pageView.mousePOSX + (leftToolbar.width + layersPanel.width)
-    property int mousePOSY : pageView.mousePOSY
+    property int mousePOSY : pageView.mousePOSY + statusbar.height
 
 
    // TODO: add fit to screen button that calls the pageView.fitToScreen

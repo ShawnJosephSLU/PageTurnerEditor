@@ -34,8 +34,6 @@ Rectangle {
 
 
 
-
-
     MouseArea {
         anchors.fill: parent
 
