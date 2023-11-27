@@ -130,10 +130,9 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // make invisible
-                    rightClickMenu.visible = false
 
-
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
@@ -193,9 +192,9 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // Handle Undo scene then ...
-                    // make invisible
-                    rightClickMenu.visible = false
+
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
@@ -257,9 +256,9 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // Handle Redo scene then ...
-                    // make invisible
-                    rightClickMenu.visible = false
+
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
@@ -319,9 +318,9 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // Handle Redo scene then ...
-                    // make invisible
-                    rightClickMenu.visible = false
+
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
@@ -382,9 +381,10 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // Handle Redo scene then ...
-                    // make invisible
-                    rightClickMenu.visible = false
+
+                    pageView.zoomIn()
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
@@ -445,9 +445,9 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // Handle Redo scene then ...
-                    // make invisible
-                    rightClickMenu.visible = false
+
+                    pageView.rightClicked = false
+                    pageView.leftClicked = false
                 }
             }
         }
@@ -555,8 +555,7 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-                    // Handle Redo scene then ...
-                    // make invisible
+
                     pageView.rightClicked = false
                     pageView.leftClicked = false
                 }

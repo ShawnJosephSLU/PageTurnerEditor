@@ -115,4 +115,18 @@ Rectangle {
         // Set the new scale factor
         pageView.scaleFactor = newScaleFactor;
     }
+
+    function zoomIn() {
+        const scaleFactorIncrement = 0.1;
+        const maxScaleFactor = 3.0;
+
+        // Increment the scale factor
+        pageView.scaleFactor += scaleFactorIncrement;
+
+        // Limit the scale factor to the maximum value
+        if (pageView.scaleFactor > maxScaleFactor) {
+            pageView.scaleFactor = maxScaleFactor;
+        }
+    }
+
 }
