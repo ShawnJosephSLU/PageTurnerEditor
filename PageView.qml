@@ -129,4 +129,17 @@ Rectangle {
         }
     }
 
+    function zoomOut() {
+        const scaleFactorIncrement = 0.1;
+        const minScaleFactor = 0.1;
+
+        // Increment the scale factor
+        pageView.scaleFactor -= scaleFactorIncrement;
+
+        // Limit the scale factor to the maximum value
+        if (pageView.scaleFactor < minScaleFactor) {
+            pageView.scaleFactor = minScaleFactor;
+        }
+    }
+
 }

@@ -445,7 +445,7 @@ ApplicationWindow {
                 }
 
                 onClicked: {
-
+                    pageView.zoomOut()
                     pageView.rightClicked = false
                     pageView.leftClicked = false
                 }
