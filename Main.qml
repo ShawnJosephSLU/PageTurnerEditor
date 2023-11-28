@@ -608,6 +608,8 @@ ApplicationWindow {
 
         isRulerVisible: root.isShowingRuler
         isGridVisible:  root.isShowingGrid
+        isSelectAndDragActivated: root.isInSelectAndDragMode
+        isBoxSelectActivated: root.isInBoxSelectMode
 
     }
 

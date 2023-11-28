@@ -23,6 +23,10 @@ Flickable {
     property int mousePOSY;
     property bool isRulerVisible;
     property bool isGridVisible;
+    property bool isSelectAndDragActivated;
+    property bool isBoxSelectActivated;
+
+
 
 
     Rectangle {
@@ -114,27 +118,53 @@ Flickable {
 
 
         onPressed: {
-           selectionBox.startX = mouseX
-           selectionBox.startY = mouseY
-           console.log("start : (", selectionBox.startX, "," , selectionBox.startY, ")")
-           selectionBox.visible = true
+
+            if(isBoxSelectActivated || isSelectAndDragActivated){
+               selectionBox.startX = mouseX
+               selectionBox.startY = mouseY
+               console.log("start : (", selectionBox.startX, "," , selectionBox.startY, ")")
+               selectionBox.visible = true
+            }
        }
 
        onPositionChanged: {
-           if (pageViewMouseArea.drag.active) {
-               // continuously update the selectionBox size
-               selectionBox.x = Math.min(selectionBox.startX, pageViewMouseArea.mouseX)
-               selectionBox.y = Math.min(selectionBox.startY, pageViewMouseArea.mouseY)
-               selectionBox.width = Math.abs(pageViewMouseArea.mouseX - selectionBox.startX)
-               selectionBox.height = Math.abs(pageViewMouseArea.mouseY - selectionBox.startY)
+           if(isBoxSelectActivated || isSelectAndDragActivated  ){
+
+               if(pageViewMouseArea.drag.active) {
+                   // continuously update the selectionBox size
+                   selectionBox.x = Math.min(selectionBox.startX, pageViewMouseArea.mouseX)
+                   selectionBox.y = Math.min(selectionBox.startY, pageViewMouseArea.mouseY)
+                   selectionBox.width = Math.abs(pageViewMouseArea.mouseX - selectionBox.startX)
+                   selectionBox.height = Math.abs(pageViewMouseArea.mouseY - selectionBox.startY)
+               }
            }
        }
 
        onReleased: {
-           selectionBox.endX = mouseX
-           selectionBox.endY = mouseY
-           console.log("end : (", selectionBox.endX, "," , selectionBox.endY, ")")
-           selectionBox.visible = false
+           if(isBoxSelectActivated || isSelectAndDragActivated){
+               selectionBox.endX = mouseX
+               selectionBox.endY = mouseY
+               console.log("end : (", selectionBox.endX, "," , selectionBox.endY, ")")
+               selectionBox.visible = false
+           }
+       }
+
+       onEntered: {
+           if(isSelectAndDragActivated){
+               cursorShape = Qt.ArrowCursor
+           }
+
+           else if(isBoxSelectActivated){
+               cursorShape = Qt.CrossCursor
+           }
+           else {
+               cursorShape = Qt.ArrowCursor
+           }
+
+       }
+
+       onExited: {
+           cursorShape = Qt.ArrowCursor
        }
     }
 
