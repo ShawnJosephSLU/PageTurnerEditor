@@ -21,16 +21,20 @@ Flickable {
 
     property int mousePOSX ;
     property int mousePOSY;
-    property bool isRulerVisible : false
+    property bool isRulerVisible;
+    property bool isGridVisible;
+
 
     Rectangle {
         id: background
-        color: "lightgrey"
+        color: "#e1e1e1"
         anchors.fill: parent
     }
 
 
-
+    PageViewGrid{
+        visible: isGridVisible
+    }
 
     ProjectPage {
         id: frontCoverPage
@@ -40,11 +44,10 @@ Flickable {
         anchors.centerIn: parent
     }
 
-
-
     PageViewRuler {
         visible: isRulerVisible
     }
+
 
 
     PinchArea {

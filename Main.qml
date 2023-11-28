@@ -607,6 +607,7 @@ ApplicationWindow {
         pageHeight: root.pageHeight
 
         isRulerVisible: root.isShowingRuler
+        isGridVisible:  root.isShowingGrid
 
     }
 

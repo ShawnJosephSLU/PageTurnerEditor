@@ -4,9 +4,8 @@ Rectangle {
 
     property bool isOpened;
 
-    LeftSeperator {
-        strokeColor: "#A0A0A0"
-    }
+    LeftSeperator { }
+    color: "#f5f5f5"
 
     width: isOpened ? 300 : 0
 

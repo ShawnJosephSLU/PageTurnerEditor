@@ -23,6 +23,7 @@ Rectangle {
 
         color: "#efefef"
 
+        BottomSeperator {color: "red"}
         Rectangle {
             id: topRulerPointer
             color : "transparent"
@@ -38,6 +39,8 @@ Rectangle {
 
             }
         }
+
+
     }
 
 
@@ -50,6 +53,8 @@ Rectangle {
         topPadding: 25
 
         color: "#efefef"
+
+        RightSeperator {color: "blue"}
 
         Rectangle {
             id: leftRulerPointer
@@ -66,7 +71,10 @@ Rectangle {
 
             }
         }
+
+
     }
+
 
 
 

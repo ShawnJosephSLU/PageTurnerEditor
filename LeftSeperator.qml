@@ -2,7 +2,7 @@ import QtQuick
 
 Rectangle {
     property int thickness : 1
-    property color strokeColor : "black"
+    property color strokeColor : "#b0b0b0"
 
     color: strokeColor
     width: thickness

@@ -56,6 +56,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES MainMenubar.qml
     QML_FILES PageViewRightButtonMenu.qml
     QML_FILES PageViewRuler.qml
+    QML_FILES PageViewGrid.qml
 
 
 )

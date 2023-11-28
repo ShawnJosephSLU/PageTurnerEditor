@@ -2,11 +2,10 @@ import QtQuick
 
 Rectangle {
 
+    color: "#f5f5f5"
     property bool isOpened;
 
-    RightSeperator {
-        strokeColor: "#A0A0A0"
-    }
+    RightSeperator {}
 
     width: isOpened ? 300 : 0
 
