@@ -49,6 +49,13 @@ Flickable {
     }
 
 
+    SelectionBox {
+        id: selectionBox
+        x: Math.min(startX, pageViewMouseArea.mouseX)
+        y: Math.min(startY, pageViewMouseArea.mouseY)
+        width: Math.abs(pageViewMouseArea.mouseX - startX)
+        height: Math.abs(pageViewMouseArea.mouseY - startY)
+    }
 
     PinchArea {
         anchors.fill: parent
@@ -81,6 +88,7 @@ Flickable {
         anchors.fill: parent
         hoverEnabled: true
 
+
         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
 
@@ -94,6 +102,7 @@ Flickable {
                rightClicked = true
                leftClicked = false
 
+
             }
             else if(mouse.button === Qt.LeftButton) {
                 rightClicked = false
@@ -102,7 +111,33 @@ Flickable {
                 console.log("left-clicked")
             }
         }
+
+
+        onPressed: {
+           selectionBox.startX = mouseX
+           selectionBox.startY = mouseY
+           console.log("start : (", selectionBox.startX, "," , selectionBox.startY, ")")
+           selectionBox.visible = true
+       }
+
+       onPositionChanged: {
+           if (pageViewMouseArea.drag.active) {
+               // continuously update the selectionBox size
+               selectionBox.x = Math.min(selectionBox.startX, pageViewMouseArea.mouseX)
+               selectionBox.y = Math.min(selectionBox.startY, pageViewMouseArea.mouseY)
+               selectionBox.width = Math.abs(pageViewMouseArea.mouseX - selectionBox.startX)
+               selectionBox.height = Math.abs(pageViewMouseArea.mouseY - selectionBox.startY)
+           }
+       }
+
+       onReleased: {
+           selectionBox.endX = mouseX
+           selectionBox.endY = mouseY
+           console.log("end : (", selectionBox.endX, "," , selectionBox.endY, ")")
+           selectionBox.visible = false
+       }
     }
+
 
     Component.onCompleted:  {
         allPages.push[frontCoverPage]
