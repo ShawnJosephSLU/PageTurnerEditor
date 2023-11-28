@@ -11,5 +11,5 @@ Rectangle {
 
     color: "#EFEFFF"
     visible: false
-    opacity: 0.4
+    opacity: 0.6
 }
