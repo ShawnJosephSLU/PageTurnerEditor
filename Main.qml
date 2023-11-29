@@ -600,8 +600,9 @@ ApplicationWindow {
         id:pageView
         anchors.left: layersPanel.right
         anchors.top: currentPageLabel.bottom
-        anchors.bottom: statusbar.top
+        anchors.bottom: selectPagePanel.top
         anchors.right: propertiesPanel.left
+
 
         pageWidth: root.pageWidth
         pageHeight: root.pageHeight
@@ -631,6 +632,16 @@ ApplicationWindow {
         anchors.bottom: statusbar.top
 
         isOpened: isPropertiesPanelOpened
+    }
+
+
+    SelectPagePanel {
+       id:selectPagePanel
+       anchors.bottom : statusbar.top
+       anchors.left: layersPanel.right
+       anchors.right: propertiesPanel.left
+       height: 150
+
     }
 
 

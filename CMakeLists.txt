@@ -58,6 +58,7 @@ qt_add_qml_module(appPageTurnerEditor
     QML_FILES PageViewRuler.qml
     QML_FILES PageViewGrid.qml
     QML_FILES SelectionBox.qml
+    QML_FILES SelectPagePanel.qml
 
 
 )
