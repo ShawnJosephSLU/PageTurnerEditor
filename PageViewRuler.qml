@@ -29,7 +29,7 @@ Rectangle {
             color : "transparent"
             height: parent.height
             width: parent.height
-            x: Math.max(topRuler.leftPadding / 2, Math.min(pageViewMouseArea.mouseX - (width / 2), topRuler.width - width - topRuler.leftPadding))
+            x: Math.max(topRuler.leftPadding / 2, Math.min(pageViewMouseArea.mouseX - (width / 2), topRuler.width - width + topRuler.leftPadding))
 
             Image {
                 id: cursorXTracker
@@ -61,7 +61,7 @@ Rectangle {
             color : "transparent"
             height: parent.width
             width: parent.width
-            y: Math.max(leftRuler.topPadding / 2, Math.min(pageViewMouseArea.mouseY - (height / 2), leftRuler.height - height - leftRuler.topPadding))
+            y: Math.max(leftRuler.topPadding / 2, Math.min(pageViewMouseArea.mouseY - (height / 2), leftRuler.height - height + leftRuler.topPadding))
 
             Image {
                 id: cursorYTracker
@@ -71,8 +71,6 @@ Rectangle {
 
             }
         }
-
-
     }
 
 
