@@ -9,8 +9,14 @@ Flickable {
    // color: "lightgrey"
     clip: true
 
-    contentWidth: pageView.width
-    contentHeight: pageView.height
+    contentWidth: frontCoverPage.height < pageView.height ? pageView.width: frontCoverPage.width + 1000
+    contentHeight: frontCoverPage.height < pageView.height ? pageView.height: frontCoverPage.height + 1000
+
+    contentX: (contentWidth - pageView.width) / 2
+    contentY: (contentHeight - pageView.height) / 2
+
+
+
 
     property var allPages: []
     property real scaleFactor: 1.0
@@ -48,9 +54,9 @@ Flickable {
         anchors.centerIn: parent
     }
 
-    PageViewRuler {
-        visible: isRulerVisible
-    }
+    // PageViewRuler {
+    //     visible: isRulerVisible
+    // }
 
 
     SelectionBox {
